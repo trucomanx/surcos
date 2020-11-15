@@ -42,12 +42,14 @@ if ((LIN+2*L-1)<=NLIN)&&((COL+2*L-1)<=NCOL)
         endif
 
         figure(1);
+        subplot(1,3,1);
         imagesc(Acrop);
         colormap(gray);
         daspect([1 1 1]);
         refresh(figure(1));
 
-        figure(2);
+        %figure(2);
+        subplot(1,3,2);
         imagesc(A);
         daspect([1 1 1]);
         hold on
@@ -59,21 +61,19 @@ if ((LIN+2*L-1)<=NLIN)&&((COL+2*L-1)<=NCOL)
         endif
         hold off      
         colormap(gray);
-        refresh(figure(2));
+        refresh(figure(1));
+        %refresh(figure(2));
 
 
-        figure(3);
+        %figure(3);
+        subplot(1,3,3);
         surf(Agray);
         shading interp
-        colormap(jet);
-        %hold on
-        %surf(LIMEAR*ones(size(Agray)));
-        %shading interp
-        %hold off
-        %view([-42.062 2.1034])
+        %colormap(jet);
         view([0 -90])
         daspect([1 1 1]);
-        refresh(figure(3));
+        refresh(figure(1));
+        %refresh(figure(3));
 
         %input('******************************************');
 
